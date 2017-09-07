@@ -155,24 +155,22 @@ class SplayTree:
             self.preorder(node.right)
 
 
+# splayTree=SplayTree()
 
+# splayTree[12] = 12
+# splayTree[10] = 10
+# splayTree[1] = 1
+# splayTree[3] = 3
+# splayTree[5] = 5
+# splayTree[100] = 100
 
-splayTree=SplayTree()
+# splayTree.preorder(splayTree.root)
+# print("\n")
 
-splayTree[12] = 12
-splayTree[10] = 10
-splayTree[1] = 1
-splayTree[3] = 3
-splayTree[5] = 5
-splayTree[100] = 100
+# print(splayTree.find(100))
+# print("\n")
 
-splayTree.preorder(splayTree.root)
-print("\n")
-
-print(splayTree.find(100))
-print("\n")
-
-splayTree.preorder(splayTree.root)
-print("\n")
+# splayTree.preorder(splayTree.root)
+# print("\n")
 # for x in splayTree.keys():
 #     print(x)
