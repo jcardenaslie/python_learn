@@ -25,7 +25,7 @@ def welcome():
 	start = input("Press enter/return to start or Q to quit").lower()
 	if start == 'q':
 		print('Bye')
-		# sys.exit()
+		sys.exit()
 	else:
 		return True
 
