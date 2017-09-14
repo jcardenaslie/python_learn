@@ -9,6 +9,8 @@ test_list2 = []
 quick_times = []
 
 test_size = [1, 10, 100, 1000]
+test_size2 = [1000, 2000, 3000, 4000]
+
 
 for size in test_size:
 
@@ -29,7 +31,7 @@ for i in range(0, len(quick_times) ):
 	plot.append(i)
 
 plt.title('Analisis Experimental')
-plt.plot(plot,quick_times)
+plt.plot(test_size2,quick_times)
 plt.ylabel('Tiempo (s)')
 plt.xlabel('Tamano (10^n)')
 plt.legend(['quick sort'], loc='upper left')

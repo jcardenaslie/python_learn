@@ -14,7 +14,7 @@ def countingSort(arr, exp1):
         count[ (index)%10 ] += 1
     
     # Change count[i] so that count[i] now contains actual
-    #  position of this digit in output array
+    # position of this digit in output array
 
     #Suma acumulada del arreglo
     for i in range(1,10):

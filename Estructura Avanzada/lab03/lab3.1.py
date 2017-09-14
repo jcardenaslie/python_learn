@@ -12,6 +12,7 @@ times_radix3 = []
 
 test_size = [1, 10, 100, 1000, 10000, 100000, 1000000]
 test_size2 = [1000, 2000, 3000, 4000]
+test_size3 = [1000] * 5
 
 iter_lenght = len(test_size)
 
@@ -22,7 +23,13 @@ for size in test_size:
 	test_radix2 = []
 
 	for x in range(0,size):
-		new_val=random.randint(math.pow(10,4), math.pow(10,5))
+		# new_val=random.randint(math.pow(10,4), math.pow(10,5))
+		if x > int(size/2):
+			new_val =random.randint(0, int(size/2))
+		else:
+			new_val =random.randint(int(size/2), size)
+
+
 		test_quick.append(new_val)
 		test_quick2.append(new_val)
 		test_radix.append(new_val)

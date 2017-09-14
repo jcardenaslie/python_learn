@@ -37,38 +37,40 @@ def radixSort2(arr):
         countingSort(arr,exp)
         exp *= 10
 
-arr = []
+# arr = []
 
-test_size = [1, 10, 100, 1000]
-radix_times = []
+# test_size = [1, 10, 100, 1000]
+# test_size2 = [1000, 2000, 3000, 4000]
 
-for size in test_size:
 
-    for x in range(0,1000):
-            new_val=random.randint(math.pow(10,4), math.pow(10,5))
-            arr.append(new_val)
+# radix_times = []
 
-    start = time.clock()
+# for size in test_size:
+
+#     for x in range(0,1000):
+#             new_val=random.randint(math.pow(10,4), math.pow(10,5))
+#             arr.append(new_val)
+
+#     start = time.clock()
     
-    radix_sort.radixSort(arr)
-        # radixSort2(arr)
+#     radix_sort.radixSort(arr)
+#         # radixSort2(arr)
 
-    end = time.clock()
-    result_radix = end - start
-    radix_times.append(result_radix)
-    print ("radix: {}".format(result_radix))
+#     end = time.clock()
+#     result_radix = end - start
+#     radix_times.append(result_radix)
+#     print ("radix: {}".format(result_radix))
 
 
-plot = []
+# plot = []
 
-for i in range(0, len(radix_times) ):
-    plot.append(i)
+# for i in range(0, len(radix_times) ):
+#     plot.append(i)
 
-plt.title('Analisis Experimental')
-plt.plot(plot,radix_times)
-plt.ylabel('Tiempo (s)')
-plt.xlabel('Tamano (10^n)')
-plt.legend(['radix sort'], loc='upper left')
-plt.show()
+# plt.title('Analisis Experimental')
+# plt.plot(test_size2,radix_times)
+# plt.ylabel('Tiempo (s)')
+# plt.xlabel('Tamano (10^n)')
+# plt.legend(['radix sort'], loc='upper left')
+# plt.show()
  
-# This code is contributed by Mohit Kumra
