@@ -2,6 +2,11 @@ import radix_sort2
 import radix_sort3
 import math, random, time 
 from algorithms.sorting import quick_sort
+from algorithms.sorting import bubble_sort
+from algorithms.sorting import heap_sort
+from algorithms.sorting import insertion_sort
+from algorithms.sorting import merge_sort
+from algorithms.sorting import selection_sort
 import matplotlib.pyplot as plt
 
 
@@ -42,12 +47,6 @@ for size in test_size:
 	result_quick = end - start
 	times_quick.append(result_quick)
 
-	#RADIX SORT
-	# start = time.clock()
-	# radix_sort2.radixSort2(test_list2)
-	# end = time.clock()
-	# result_radix = end - start
-	# times_radix.append(result_radix)
 
 	# RADIX SORT
 	start = time.clock()
