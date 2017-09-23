@@ -29,7 +29,7 @@ def countingSort(arr, exp1):
     for i in range(0,len(arr)):
         arr[i] = output[i]
  
-def radixSort2(arr):
+def radix_sort(arr):
  
     max1 = max(arr)
     exp = 1
