@@ -1,85 +1,94 @@
-import radix_sort2
-import radix_sort3
+import radix_sort3 as radix_g4g
+# import radix_sort3
 import math, random, time 
 from algorithms.sorting import quick_sort
-from algorithms.sorting import bubble_sort
 from algorithms.sorting import heap_sort
-from algorithms.sorting import insertion_sort
 from algorithms.sorting import merge_sort
-from algorithms.sorting import selection_sort
 import matplotlib.pyplot as plt
+
+def radix_time(test_list):
+	start = time.clock()
+	radix_g4g.radix_sort(test_list)
+	end = time.clock()
+	result = end - start
+	return result
+
+def quick_time(test_list):
+	start = time.clock()
+	quick_sort.sort(test_list)
+	end = time.clock()
+	result = end - start
+	return result
+
+def heap_time(test_list):
+	start = time.clock()
+	heap_sort.sort(test_list)
+	end = time.clock()
+	result = end - start
+	return result
+
+def merge_time(test_list):
+	start = time.clock()
+	heap_sort.sort(test_list)
+	end = time.clock()
+	result = end - start
+	return result
 
 
 times_quick = []
-times_quick2 = []
 times_radix = []
-times_radix3 = []
+times_heap = []
+times_merge = []
 
-test_size = [1, 10, 100, 1000, 10000, 100000, 1000000]
-test_size2 = [1000, 2000, 3000, 4000]
-test_size3 = [1000] * 5
+input_size = [10, 100, 1000, 10000, 100000, 1000000]
+# input_size = [10, 100, 1000, 10000, 100000]
+# input_size = [10, 100, 1000, 10000]
+# input_size = [10, 100, 1000]
+# input_size = [10, 100, 1000]
+# input_size = [10]
+# input_size = [1000, 2000, 3000, 4000]
 
-iter_lenght = len(test_size)
+iter_lenght = len(input_size)
 
-for size in test_size:
-	test_quick = []
-	test_quick2 = []
-	test_radix = []
-	test_radix2 = []
+input_range = 4
+
+for size in input_size:
+	test_data = []
 
 	for x in range(0,size):
-		# new_val=random.randint(math.pow(10,4), math.pow(10,5))
-		if x > int(size/2):
-			new_val =random.randint(0, int(size/2))
-		else:
-			new_val =random.randint(int(size/2), size)
+		new_val=random.randint(math.pow(10,1), math.pow(10,input_range))
+		# new_val=random.randint(math.pow(10,1), math.pow(10,x+1))
+		test_data.append(new_val)
 
-
-		test_quick.append(new_val)
-		test_quick2.append(new_val)
-		test_radix.append(new_val)
-		test_radix2.append(new_val)
-	
-	#QUICK SORT
-	start = time.clock()
-	quick_sort.sort(test_quick)
-	end = time.clock()
-	result_quick = end - start
-	times_quick.append(result_quick)
-
-
-	# RADIX SORT
-	start = time.clock()
-	radix_sort3.radix_sort3(test_radix2)
-	end = time.clock()
-	result_radix3 = end - start
-	times_radix3.append(result_radix3)
+	times_quick.append(quick_time(test_data))
+	times_radix.append(radix_time(test_data))
+	times_heap.append(heap_time(test_data))
+	times_merge.append(merge_time(test_data))
 
 
 plot = []
 
-for i in range(0,iter_lenght):
-	# print ("radix: {}".format(times_radix[i]))
-	print ("radix 3: {}".format(times_radix3[i]))
-	print ("quick: {}".format(times_quick[i]))
-	# print ("quick 2: {}".format(times_quick2[i]))
-	print("\n")
-
-
-for i in range(0, len(times_quick) ):
+for i in range(0, iter_lenght):
 	plot.append(i)
 
-plt.title('Analisis Experimental')
+for i in range(0,iter_lenght):
+	print("q: {0:.7f}".format(times_quick[i]))
+	print("m: {0:.7f}".format(times_merge[i]))
+	print("h: {0:.7f}".format(times_heap[i]))
+	print("r: {0:.7f}".format(times_radix[i]))
+	print("")
+
+plt.title('Analisis Experimental Radix Otro')
 plt.plot(plot,times_quick)
-# plt.plot(plot,times_quick2)
-# plt.plot(test_size2,times_radix)
-plt.plot(plot,times_radix3)
+plt.plot(plot,times_radix)
+plt.plot(plot,times_merge)
+plt.plot(plot,times_heap)
 plt.ylabel('Tiempo (s)')
 plt.xlabel('Tamano (10^n)')
 plt.legend([
 	'quick sort',
-	# 'quick sort 2' 
-	# 'radix sort', 
-	'radix_sort3'
+	'radix_sort',
+	'merge_sort',
+	'heap_sort'
 	], loc='upper left')
 plt.show()

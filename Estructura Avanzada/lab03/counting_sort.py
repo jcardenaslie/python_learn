@@ -1,8 +1,3 @@
-import math, random, time 
-from algorithms.sorting import quick_sort
-import matplotlib.pyplot as plt
-import radix_sort
-
 iterations = 0
 def countingSort(arr, exp1):
     
@@ -40,23 +35,8 @@ def countingSort(arr, exp1):
     for i in range(0,len(arr)):
         arr[i] = output[i]
  
-def radix_sort(arr):
+arr = [10, 5, 10.000, 5.000]
 
-    max1 = max(arr)
-    exp = 1
-    while max1/exp > 0:
-        countingSort(arr,exp)
-        exp *= 10
+countingSort(arr);
 
-# arr = [ 170, 45, 75, 90, 802, 24, 2, 66]
-# # arr= [random.randint(0, 100000) for i in range(0,1000)]
-
-# radix_sort(arr)
-
-# print("iterations {}".format(iterations))
-# print(arr)
-
-# for i in range(len(arr)):
-#     print(arr[i]),
- 
- 
+print(arr)
